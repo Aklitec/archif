@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class StudyLevel
 {
     /**
+     * @var int
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
@@ -20,6 +21,7 @@ class StudyLevel
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */

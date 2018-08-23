@@ -8,7 +8,8 @@ parameters:
 api_platform:
     mapping:
         paths: ['%kernel.project_dir%/src/Entity']
-    title: Hello API Platform
+    title: 'School Certs platform API'
+    description: 'API for student archive to generate and print scholar certificates'
     version: 1.0.0
     # Enable the Varnish integration
     http_cache:

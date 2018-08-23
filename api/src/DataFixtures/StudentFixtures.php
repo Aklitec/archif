@@ -28,6 +28,7 @@ class StudentFixtures extends Fixture
                     ->setCne($faker->regexify("[A-Z]{2}[1-9][0-9]{5}"))
                     ->setBirthPlace($faker->city)
                     ->setBirthDate($faker->dateTimeThisDecade())
+                    ->setStudyLevel($study_level)
                     ->setStopDate($faker->dateTimeThisDecade())
                     ->setComments($faker->text(50))
                 ;

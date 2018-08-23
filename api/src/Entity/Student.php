@@ -28,12 +28,14 @@ class Student
     private $code;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     private $firstName;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
@@ -47,15 +49,23 @@ class Student
     private $cne;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $birthPlace;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="date", nullable=true)
      * @Assert\Date()
      */
     private $birthDate;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\StudyLevel")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $studyLevel;
 
     /**
      * @var \DateTime the date by which the student left the school
@@ -65,31 +75,37 @@ class Student
     private $stopDate;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $comments;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime", nullable=false)
      */
     private $createdAt;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime", nullable=false)
      */
     private $updatedAt;
 
     /**
+     * @var boolean
      * @ORM\Column(type="boolean")
      */
     private $deleted = 0;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $deletedAt;
 
     /**
+     * @var Student
      * @ORM\ManyToOne(targetEntity="App\Entity\Student")
      * @ORM\JoinColumn(nullable=true)
      */
@@ -172,6 +188,18 @@ class Student
     public function setBirthDate(?\DateTimeInterface $birthDate): self
     {
         $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    public function getStudyLevel(): ?StudyLevel
+    {
+        return $this->studyLevel;
+    }
+
+    public function setStudyLevel(?StudyLevel $studyLevel): self
+    {
+        $this->studyLevel = $studyLevel;
 
         return $this;
     }

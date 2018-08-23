@@ -34,13 +34,14 @@ class Certificate
     private $number;
 
     /**
+     * @var \DateTime
      * @ORM\Column(type="datetime")
      * @Assert\NotBlank()
      */
     private $createdAt;
 
     /**
-     * @var string the user that created this certificate
+     * @var Student the user that created this certificate
      * @ORM\ManyToOne(targetEntity="App\Entity\Student")
      * @ORM\JoinColumn(nullable=false)
      * @Assert\NotBlank()

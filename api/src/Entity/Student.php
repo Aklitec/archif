@@ -3,11 +3,23 @@
 namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Annotation\ApiSubresource;
 use Symfony\Component\Validator\Constraints as Assert;
+use App\Controller\Student\StudentDelete;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource()
+ * @ApiResource(
+ *     itemOperations={
+ *      "get",
+ *      "put",
+ *      "delete"={
+ *          "method"="DELETE",
+ *          "path"="/students/delete/{id}",
+ *          "controller"=StudentDelete::class
+ *      }
+ *    }
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\StudentRepository")
  * @ORM\HasLifecycleCallbacks
  */
@@ -64,6 +76,7 @@ class Student
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\StudyLevel")
      * @ORM\JoinColumn(nullable=false)
+     * @ApiSubresource()
      */
     private $studyLevel;
 

@@ -604,7 +604,7 @@
 											"top": 221,
 											"width": 182,
 											"height": 13,
-											"text": "-code",
+											"text": "-number",
 											"horizontalAlignment": 0
 										},
 										{
@@ -1822,7 +1822,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlQDX62ZPEAt4="
 							},
-							"name": "deletedBy"
+							"name": "deletedBy",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -1924,9 +1925,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFlQEiXq5SRdbE="
 							},
-							"name": "code",
-							"visibility": "private",
-							"type": ""
+							"name": "number",
+							"visibility": "private"
 						},
 						{
 							"_type": "UMLAttribute",

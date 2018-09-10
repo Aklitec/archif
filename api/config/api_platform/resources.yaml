@@ -1,0 +1,29 @@
+# Student ---------------------------------------------------------------------
+App\Entity\Student:
+
+  attributes:
+    access_control: 'is_granted("ROLE_USER")'
+    access_control_message: 'Only admins can manage students'
+    normalization_context:
+      groups: ['user:read', 'admin:read']
+    denormalization_context:
+      groups: ['user:write', 'admin:write']
+
+
+  itemOperations:
+    get:
+      filters: ['offer.date_filter']
+    put: ~
+    delete:
+      method: 'DELETE'
+      path: '/student/{id}'
+      controller: 'App\Controller\Student\StudentDelete'
+      defaults:
+        _api_persist: false
+
+  collectionOperations:
+    get:
+      order: {'id': 'DESC'}
+    post:
+      access_control: 'is_granted("ROLE_ADMIN")'
+      access_control_message: 'Only admins can add students.'

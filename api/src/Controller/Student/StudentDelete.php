@@ -14,15 +14,19 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class StudentDelete
 {
-    private $manager;
+    private $em;
 
-    public function __construct(EntityManagerInterface $manager)
+    public function __construct(EntityManagerInterface $em)
     {
-        $this->manager = $manager; // not used just for testing ...
+        $this->em = $em;
     }
 
     public function __invoke(Student $data) : Student
     {
-        return $data->setDeleted(true);
+        $data->setDeleted(true);
+        $data->setDeletedAt(new \DateTime('now'));
+        // $data->setDeletedBy()
+        $this->em->flush();
+        return $data;
     }
 }

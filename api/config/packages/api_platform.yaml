@@ -6,11 +6,22 @@ parameters:
     env(VARNISH_URL): ''
 
 api_platform:
-    mapping:
-        paths: ['%kernel.project_dir%/src/Entity']
     title: 'School Certs platform API'
     description: 'API for student archive to generate and print scholar certificates'
     version: 1.0.0
+    mapping:
+        paths:
+            - '%kernel.project_dir%/src/Entity'
+            - '%kernel.project_dir%/config/api_platform'
+
+    # FOSUserBundle integration.
+#    enable_fos_user: true
+    # Swagger
+    swagger:
+        api_keys:
+            apiKey:
+                name: Authorization
+                type: header
     # Enable the Varnish integration
     http_cache:
         invalidation:

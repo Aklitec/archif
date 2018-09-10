@@ -2,24 +2,33 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use Symfony\Component\Validator\Constraints as Assert;
-use App\Controller\Student\StudentDelete;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\DateFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ApiResource(
- *     itemOperations={
- *      "get",
- *      "put",
- *      "delete"={
- *          "method"="DELETE",
- *          "path"="/students/delete/{id}",
- *          "controller"=StudentDelete::class
- *      }
- *    }
- * )
+ * @ApiResource()
+ * @ApiFilter(SearchFilter::class, properties={
+ *     "id": "exact",
+ *     "code": "ipartial",
+ *     "firstName": "ipartial",
+ *     "lastName": "ipartial",
+ *     "cne": "exact",
+ *     "studyLevel": "exact"
+ * })
+ * @ApiFilter(DateFilter::class, properties={
+ *     "birthDate": DateFilter::EXCLUDE_NULL,
+ *     "stopDate": DateFilter::EXCLUDE_NULL
+ * })
+ * @ApiFilter(OrderFilter::class, properties={
+ *     "id", "code", "firstName", "lastName", "studyLevel.name"
+ * })
+ *
  * @ORM\Entity(repositoryClass="App\Repository\StudentRepository")
  * @ORM\HasLifecycleCallbacks
  */

@@ -73,8 +73,8 @@
       <ObjectId>2200</ObjectId>
       <Comment>standard public schema</Comment>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2018-09-10.13:00:22.055</IntrospectionTimestamp>
-      <IntrospectionStateNumber>635</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2018-09-10.19:51:03.919</IntrospectionTimestamp>
+      <IntrospectionStateNumber>642</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -156,7 +156,7 @@
     <table id="24" parent="12" name="migration_versions">
       <ObjectId>16393</ObjectId>
       <Owner>api-platform</Owner>
-      <StateNumber>555</StateNumber>
+      <StateNumber>641</StateNumber>
     </table>
     <table id="25" parent="12" name="student">
       <ObjectId>16467</ObjectId>
@@ -171,7 +171,7 @@
     <table id="27" parent="12" name="user">
       <ObjectId>16603</ObjectId>
       <Owner>api-platform</Owner>
-      <StateNumber>635</StateNumber>
+      <StateNumber>642</StateNumber>
     </table>
     <column id="28" parent="23" name="id">
       <Position>1</Position>
@@ -423,16 +423,16 @@
     </column>
     <column id="66" parent="27" name="username">
       <Position>2</Position>
-      <DataType>varchar(25)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>635</StateNumber>
+      <StateNumber>642</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="67" parent="27" name="email">
       <Position>4</Position>
-      <DataType>varchar(60)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>635</StateNumber>
+      <StateNumber>642</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="68" parent="27" name="is_active">
@@ -444,27 +444,55 @@
     </column>
     <column id="69" parent="27" name="password">
       <Position>8</Position>
-      <DataType>varchar(64)|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>635</StateNumber>
+      <StateNumber>642</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="70" parent="27" name="user_pkey">
+    <column id="70" parent="27" name="full_name">
+      <Position>14</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>642</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="71" parent="27" name="roles">
+      <Position>15</Position>
+      <Comment>(DC2Type:array)</Comment>
+      <DataType>text|0s</DataType>
+      <StateNumber>642</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="72" parent="27" name="password_requested_at">
+      <Position>16</Position>
+      <DataType>timestamp(0)|0s</DataType>
+      <StateNumber>642</StateNumber>
+      <DefaultExpression>NULL::timestamp without time zone</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="73" parent="27" name="confirmation_token">
+      <Position>17</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <StateNumber>642</StateNumber>
+      <DefaultExpression>NULL::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="74" parent="27" name="user_pkey">
       <ObjectId>16614</ObjectId>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="71" parent="27" name="uniq_8d93d649f85e0677">
-      <ObjectId>16631</ObjectId>
+    <index id="75" parent="27" name="uniq_8d93d649f85e0677">
+      <ObjectId>16691</ObjectId>
       <ColNames>username</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="72" parent="27" name="uniq_8d93d649e7927c74">
-      <ObjectId>16632</ObjectId>
+    <index id="76" parent="27" name="uniq_8d93d649e7927c74">
+      <ObjectId>16692</ObjectId>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="73" parent="27" name="user_pkey">
+    <key id="77" parent="27" name="user_pkey">
       <ObjectId>16615</ObjectId>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>user_pkey</UnderlyingIndexName>

@@ -1,8 +1,8 @@
-import React, { PureComponent, Fragment } from 'react';
-import { Table, Alert } from 'antd';
+import React, { PureComponent /* Fragment */ } from 'react';
+import { Table /* Alert */ } from 'antd';
 import styles from './index.less';
 
-function initTotalList(columns) {
+/* function initTotalList(columns) {
   const totalList = [];
   columns.forEach(column => {
     if (column.needTotal) {
@@ -10,21 +10,21 @@ function initTotalList(columns) {
     }
   });
   return totalList;
-}
+} */
 
 class StandardTable extends PureComponent {
   constructor(props) {
     super(props);
-    const { columns } = props;
-    const needTotalList = initTotalList(columns);
+    //  const { columns } = props;
+    // const needTotalList = initTotalList(columns);
 
     this.state = {
-      selectedRowKeys: [],
-      needTotalList,
+      // selectedRowKeys: [],
+      // needTotalList,
     };
   }
 
-  static getDerivedStateFromProps(nextProps) {
+  /* static getDerivedStateFromProps(nextProps) {
     // clean state
     if (nextProps.selectedRows.length === 0) {
       const needTotalList = initTotalList(nextProps.columns);
@@ -35,8 +35,7 @@ class StandardTable extends PureComponent {
     }
     return null;
   }
-
-  handleRowSelectChange = (selectedRowKeys, selectedRows) => {
+   handleRowSelectChange = (selectedRowKeys, selectedRows) => {
     let { needTotalList } = this.state;
     needTotalList = needTotalList.map(item => ({
       ...item,
@@ -48,7 +47,7 @@ class StandardTable extends PureComponent {
     }
 
     this.setState({ selectedRowKeys, needTotalList });
-  };
+  }; */
 
   handleTableChange = (pagination, filters, sorter) => {
     const { onChange } = this.props;
@@ -62,7 +61,7 @@ class StandardTable extends PureComponent {
   };
 
   render() {
-    const { selectedRowKeys, needTotalList } = this.state;
+    // const { selectedRowKeys, needTotalList } = this.state;
     const {
       data: { list, pagination },
       loading,
@@ -76,20 +75,20 @@ class StandardTable extends PureComponent {
       ...pagination,
     };
 
-    const rowSelection = {
+    /* const rowSelection = {
       selectedRowKeys,
       onChange: this.handleRowSelectChange,
       getCheckboxProps: record => ({
         disabled: record.disabled,
       }),
-    };
+    }; */
 
     return (
       <div className={styles.standardTable}>
         <Table
           loading={loading}
           rowKey={rowKey || 'key'}
-          rowSelection={rowSelection}
+          // rowSelection={rowSelection}
           dataSource={list}
           columns={columns}
           pagination={paginationProps}

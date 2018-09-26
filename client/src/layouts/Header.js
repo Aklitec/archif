@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Layout, message } from 'antd';
+import { Layout } from 'antd';
 import Animate from 'rc-animate';
 import { connect } from 'dva';
 import router from 'umi/router';
@@ -41,19 +41,19 @@ class HeaderView extends PureComponent {
     return collapsed ? 'calc(100% - 80px)' : 'calc(100% - 256px)';
   };
 
-  handleNoticeClear = type => {
+  /* handleNoticeClear = type => {
     message.success(`清空了${type}`);
     const { dispatch } = this.props;
     dispatch({
       type: 'global/clearNotices',
       payload: type,
     });
-  };
+  }; */
 
   handleMenuClick = ({ key }) => {
     const { dispatch } = this.props;
     if (key === 'userCenter') {
-      router.push('/account/center');
+      router.push('/user');
       return;
     }
     if (key === 'triggerError') {
@@ -127,15 +127,13 @@ class HeaderView extends PureComponent {
             mode="horizontal"
             Authorized={Authorized}
             onCollapse={handleMenuCollapse}
-            onNoticeClear={this.handleNoticeClear}
             onMenuClick={this.handleMenuClick}
-            onNoticeVisibleChange={this.handleNoticeVisibleChange}
             {...this.props}
           />
         ) : (
           <GlobalHeader
             onCollapse={handleMenuCollapse}
-            onNoticeClear={this.handleNoticeClear}
+            // onNoticeClear={this.handleNoticeClear}
             onMenuClick={this.handleMenuClick}
             onNoticeVisibleChange={this.handleNoticeVisibleChange}
             {...this.props}

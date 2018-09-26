@@ -1,7 +1,6 @@
-import React from 'react';
-
 export default {
-  'navbar.lang': '中文',
+  'navbar.lang': 'FR',
+  'navbar.lang.login': 'Français (France)',
   'menu.home': 'Home',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.users': 'Users',
@@ -191,16 +190,47 @@ export default {
   'app.setting.copyinfo': 'copy success，please replace defaultSettings in src/models/setting.js',
   'app.setting.production.hint':
     'Setting panel show in development enviorment only, please mannually modify',
+
   // -----------------------------Form ------------------------------------------
+  'student.form.PageHeaderWrapper.content':
+    'To add a new student to the list , fill out all fields below with their appropriate values',
   'student.form.cne': 'CNE',
-  'student.form.cne.message': 'veuillez entrer un cne valide',
+  'student.form.cne.placeholder': 'cne of the student',
+  'student.form.cne.message': 'please, fill out this field with an CNE valid',
   'student.form.fullName': 'Full Name',
-  'student.form.fullName.message': 'veuillez entrer un nom valide',
-  'student.form.birthDay': 'Birth-day',
-  'student.form.birthDay.message': 'fill the field with the appropiate value',
+  'student.form.fullName.placeholder': 'first name and last name',
+  'student.form.fullName.message': 'please, fill out this field with the appropriate value',
+  'student.form.birthDay': 'Date of birth',
+  'student.form.birthDay.placeholder': 'birth-date',
+  'student.form.birthDay.message': 'please , fill out with a valid date',
   'student.form.birthPlace': 'Birth place',
-  'student.form.birthPlace.message': 'fill the field with the appropiate value',
+  'student.form.birthPlace.placeholder': 'place of birth',
+  'student.form.birthPlace.message': 'please , fill out with a valid place',
   'student.form.comment': 'Comment',
+  'student.form.comment.placeholder': 'brief comment about the student',
   'student.form.studyLevel': 'Study level',
+  'student.form.studyLevel.middleSchool': 'Middle School',
+  'student.form.studyLevel.middleSchool.placeholder': 'select a level',
+  'student.form.studyLevel.middleSchool.level1': 'First year',
+  'student.form.studyLevel.middleSchool.level2': 'Second year',
+  'student.form.studyLevel.middleSchool.level3': 'Third year',
+  'student.form.studyLevel.highSchool': 'High School',
+  'student.form.studyLevel.highSchool.placeholder': 'select a level',
+  'student.form.studyLevel.highSchool.level1': 'Preparatory year',
+  'student.form.studyLevel.highSchool.level2': 'First year bachelor',
+  'student.form.studyLevel.highSchool.level3': 'Second year bachelor',
   'student.form.submitBtn': 'submit',
+
+  // ------------------------------------- LIST STUDENTS -----------------
+  'student.startDate': 'Start date',
+  'student.endDate': 'End date',
+
+  // ------------------------------------- Login ---------------------
+  'login.messageError': 'Incorrect passwort or account, try again',
+  'login.username.placeholder': 'E-mail',
+  'login.admin.password': 'Password',
+  'login.autoLogin': 'Auto connect',
+  'login.forgetLogin': 'Forgot password',
+  'login.logIN': 'Connect',
+  'login.registerAccount': 'Register new user',
 };

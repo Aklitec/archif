@@ -1,13 +1,18 @@
 // import zhMessages from '../../locales/zh.json';
 
 export default {
-  'navbar.lang': 'English',
-  'menu.home': '首页',
+  'navbar.lang': 'ENG',
+  'navbar.lang.login': 'English (United states)',
+  'menu.home': 'Accueil',
   'menu.dashboard': 'Dashboard',
   'menu.dashboard.analysis': '分析页',
   'menu.dashboard.monitor': '监控页',
   'menu.dashboard.workplace': '工作台',
-  'menu.form': '表单页',
+  'menu.form': 'Formulaire',
+  'menu.student': 'Étudiant',
+  'menu.student.list': 'List des Étudiants',
+  'menu.student.add': 'Ajouter un Étudiant',
+  'menu.certificat': 'Historique',
   'menu.form.basicform': '基础表单',
   'menu.form.stepform': '分步表单',
   'menu.form.stepform.info': '分步表单（填写转账信息）',
@@ -181,4 +186,46 @@ export default {
   'app.setting.copyinfo': '拷贝成功，请到 src/defaultSettings.js 中替换默认配置',
   'app.setting.production.hint':
     '配置栏只在开发环境用于预览，生产环境不会展现，请拷贝后手动修改配置文件',
+  // -----------------------------Form ------------------------------------------
+  'student.form.PageHeaderWrapper.content':
+    "Afin d'ajouter un nouveau étudiant à la lite des étudiants, veuillez remplir tous les champs ci-dessous avec leurs valeurs appropriées",
+  'student.form.cne': 'CNE',
+  'student.form.cne.placeholder': "cne de l'étudiant",
+  'student.form.cne.message': 'veuillez entrer un cne valide',
+  'student.form.fullName': 'Nom complet',
+  'student.form.fullName.placeholder': 'nom et prénom',
+  'student.form.fullName.message': 'veuillez entrer un nom valide',
+  'student.form.birthDay': 'Date de naissance',
+  'student.form.birthDay.placeholder': 'Date-naissance',
+  'student.form.birthDay.message': 'veuillez entrer une date valide',
+  'student.form.birthPlace': 'Lieu de naissance',
+  'student.form.birthPlace.placeholder': "le lieu de naissaince de l'étudiant",
+  'student.form.birthPlace.message': 'veuillez entrer un lieu valide',
+  'student.form.comment': 'Commentaire',
+  'student.form.comment.placeholder': "bref commentaire sur l'étudiant",
+  'student.form.studyLevel': "Niveau d'étude",
+  'student.form.studyLevel.middleSchool': 'Collége',
+  'student.form.studyLevel.middleSchool.placeholder': 'selectionnez un niveau',
+  'student.form.studyLevel.middleSchool.level1': 'Première année',
+  'student.form.studyLevel.middleSchool.level2': 'Deuxième année',
+  'student.form.studyLevel.middleSchool.level3': 'Troisième année',
+  'student.form.studyLevel.highSchool': 'Lycée',
+  'student.form.studyLevel.highSchool.placeholder': 'selectionnez un niveau',
+  'student.form.studyLevel.highSchool.level1': 'Année préparatioire',
+  'student.form.studyLevel.highSchool.level2': 'Première année bac',
+  'student.form.studyLevel.highSchool.level3': 'Deuxième année bac',
+  'student.form.submitBtn': 'soumettre',
+
+  // ------------------------------------- LIST STUDENTS -----------------
+  'student.startDate': 'Date de début',
+  'student.endDate': 'Date de fin',
+
+  // ------------------------------------- Login ---------------------
+  'login.messageError': 'Le mot de pass ou le compte saisie est incorrect !（admin/888888）',
+  'login.username.placeholder': 'E-mail',
+  'login.admin.password': 'Mot de passe',
+  'login.autoLogin': 'Gardez-moi connecté',
+  'login.forgetLogin': 'Mot de passe oublié',
+  'login.logIN': 'Connecter',
+  'login.registerAccount': 'Créer un utilisateur',
 };
